@@ -1,7 +1,7 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0097A7"><title>You Need Recovery - متابعة التمرين</title>
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0097A7"><title>You Need Recovery - متابعة التقدم</title>
 <style>@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
 *{box-sizing:border-box}body{margin:0;font-family:'Cairo',system-ui,sans-serif;background:#D6EAE2;color:#0B1F1A;line-height:1.6}
-.w{max-width:560px;margin:0 auto;padding:16px 16px 60px}
+.w{max-width:560px;margin:0 auto;padding:16px 16px 100px}
 header{background:linear-gradient(100deg,#0097A7 0%,#3FBF8C 50%,#76D852 100%);border-radius:0 0 32px 32px;padding:22px 20px 18px;text-align:center;margin:-16px -16px 16px}
 header h1{margin:0;font-size:22px;font-weight:800}header p{margin:2px 0 0;font-size:14px}
 .card{background:#fff;border:2px dotted #5BC96B;border-radius:26px;padding:16px;margin-bottom:14px}
@@ -19,6 +19,21 @@ h2{margin:0;font-size:20px;font-weight:800;color:#0A6E64}.sub{color:#35524B;font
 .bar{height:12px;border-radius:99px;background:#D6EAE2;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(100deg,#0097A7,#76D852)}
 .st{display:flex;gap:8px;margin-top:10px}.st div{flex:1;background:#D6EAE2;border-radius:18px;padding:8px;text-align:center;font-size:13px}.st b{display:block;font-size:20px}
 .foot{font-size:12px;color:#35524B;text-align:center;margin-top:10px}.hid{display:none}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px dotted #5BC96B;display:flex;gap:6px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));z-index:9}
+nav button{flex:1;padding:9px 4px;border-radius:999px;border:2px dotted #0097A7;background:#fff;font:700 14px Cairo;color:#0B1F1A}
+nav button.on{background:linear-gradient(100deg,#0097A7,#3FBF8C,#76D852);border-style:solid;border-color:transparent}
+input[type=number],input[type=text]{width:100%;padding:11px 14px;border-radius:18px;border:2px dotted #0097A7;font:600 16px Cairo;background:#fff;color:#0B1F1A;direction:rtl}
+label.l{display:block;font-weight:700;font-size:14px;margin:10px 0 4px;color:#0A6E64}
+.opt{display:flex;gap:8px}.opt button{flex:1;padding:10px 4px;border-radius:20px;border:2px dotted #0097A7;background:#fff;font:700 14px Cairo;color:#0B1F1A}
+.opt button.on{background:linear-gradient(100deg,#0097A7,#3FBF8C,#76D852);border-style:solid;border-color:transparent}
+.big{font-size:34px;font-weight:800;color:#0A6E64;line-height:1.2}.mint{background:#D6EAE2;border-radius:18px;padding:10px;text-align:center}
+.mi{display:flex;justify-content:space-between;align-items:center;padding:9px 4px;border-bottom:1px dotted #bcd9cd}.mi:last-child{border:0}
+.mi button{border:0;background:#fff;color:#b00020;font:700 13px Cairo}
+.dn{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.dn button{width:42px;height:42px;border-radius:50%;border:2px dotted #0097A7;background:#fff;font:800 18px Cairo}
+.dn button:disabled{opacity:.3}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.g2 div{background:#D6EAE2;border-radius:18px;padding:10px;text-align:center;font-size:13px}.g2 b{display:block;font-size:22px;color:#0A6E64}
+.over i{background:linear-gradient(100deg,#e8a33c,#d9534f)!important}.warn{font-size:13px;color:#8a5a00;background:#fff4dc;border-radius:14px;padding:8px 12px;margin-top:8px}
+.btn.s{width:auto;display:inline-block;padding:11px 22px;margin:0}
 </style></head><body><div class="w" id="app"></div>
 <script>
 const AR={"Machine Chest Press":"جهاز صدر مستوي","hammer row":"سحب همر أفقي","Machine shoulder press":"دفع أكتاف جهاز","Leg Extension Machine":"رفرفة أرجل أمامي","Machine Biceps":"جهاز بايسبس","triceps rope":"ترايسبس حبل كيبل","Incline Chest Press":"صدر عالي جهاز","Lat pulldown":"سحب علوي واسع","DB Seated Side Raises":"كتف جانبي دمبل","Lunges":"طعن حر","Vertical leg raise":"بطن متوازي حر","Plank":"بلانك بطن","Decline Chest Press":"صدر سفلي جهاز","Machine Row":"سحب منشار جهاز","Machine Overhead Press":"كتف أمامي جهاز","Leg press":"دفش جهاز","Hammer Curls":"مطرقة بايسبس دمبل","Cable kickback triceps":"ترايسبس كيبل","Machine Chest Fly":"صدر تفتيح جهاز","Cable Seated Rows":"سحب كيبل ضيق","Machine Rear Delt Fly":"كتف خلفي جهاز","Hamstring curls":"فخذ خلفي جهاز","Machine crunches":"بطن جهاز","Traps Dumbbells":"ترابيس دمبل","Smith machine incline":"صدر عالي جهاز سميث","Lower Back Machine":"أسفل ظهر جهاز","Dumbbell Shoulder press":"كتف دمبل","Standing Calf Raise":"بطات واقف جهاز","Cable Curls":"بايسبس كيبل","Overhead DB Triceps":"ترايسبس دمبل خلفي","Incline chest machine":"جهاز صدر عالي","Decline chest machine":"جهاز صدر سفلي","Crunches machine":"جهاز بطن علوي","Pull down":"سحب علوي","Low row machine":"جهاز منشار","T-Bar machine":"جهاز ظهر علوي","Cable seated row machine":"جهاز سحب أرضي","Iso-Lateral row machine":"جهاز سحب همر","Lower back machine":"جهاز أسفل الظهر","Lateral Raise":"رفرفة كتف جانبي","Machine fly side delts":"جهاز رفرفة جانبي","Cable front raise":"كتف أمامي كيبل","Traps dumbbells":"ترابيس دمبل","Adductor machine":"جهاز العضلة الضامة","Abductor machine":"جهاز غلوتس"};
@@ -30,26 +45,79 @@ full:{n:"الجدول الشامل",note:"3–4 مجموعات × 10–15 تكر
 split:{n:"جدول عضلة كل يوم",note:"3–4 مجموعات × 10–15 تكرار · راحة 2–3 دقائق",d:[["صدر + بطن",["Machine Chest Press","Smith machine incline","Incline chest machine","Decline chest machine","Crunches machine","Plank"]],["ظهر",["Pull down","Low row machine","T-Bar machine","Cable seated row machine","Iso-Lateral row machine","Lower back machine"]],["أكتاف + ترابيس",["Machine shoulder press","Lateral Raise","Machine fly side delts","Cable front raise","Machine Rear Delt Fly","Traps dumbbells"]],["بايسبس + ترايسبس",["Machine Biceps","Hammer Curls","Cable Curls","triceps rope","Cable kickback triceps","Overhead DB Triceps"]],["أرجل",legs]]},
 ppl:{n:"جدول دفع وسحب",note:"3–4 مجموعات × 10–15 تكرار · راحة 30–60 ثانية",d:[push,pull,["أرجل",legs],push,pull]}};
 const K='yr-track-v1';let S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}S=S||{prog:null,p:{}};
+S.p=S.p||{};S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};S.tab=S.tab||'train';
+let VD=null; // viewed day in nutrition tab
 const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
 const P=()=>S.p[S.prog]||(S.p[S.prog]={cur:0,ck:{},done:{},cyc:0,rest:0,last:null,total:0});
 const dt=()=>new Date().toLocaleDateString('ar',{day:'numeric',month:'long'});
+const ik=d=>{d=d||new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const fromIk=s=>{const a=s.split('-');return new Date(+a[0],+a[1]-1,+a[2])};
+const addDays=(s,n)=>{const d=fromIk(s);d.setDate(d.getDate()+n);return ik(d)};
+const dlab=s=>s==ik()?'اليوم':s==addDays(ik(),-1)?'أمس':fromIk(s).toLocaleDateString('ar',{weekday:'long',day:'numeric',month:'long'});
+const ar=n=>Math.round(n).toLocaleString('ar-EG');
 const items=(k,i)=>["warm"].concat(PR[k].d[i][1]);
 function nextOpen(k,from){const p=S.p[k],n=PR[k].d.length;for(let j=1;j<=n;j++){const x=(from+j)%n;if(!p.done[x])return x}return from}
 function go(fn){fn();save();render()}
-function render(){const a=document.getElementById('app');let h='<header><h1>You Need Recovery</h1><p>متابعة تمرينك</p></header>';
+const GN={cut:'تنشيف (إنقاص وزن)',bulk:'تضخيم (زيادة وزن)',keep:'ثبات الوزن'};
+function target(){const N=S.nut;if(N.custom>0)return Math.round(N.custom);if(!(N.need>0)||!N.goal)return null;return Math.round(N.need+(N.goal=='cut'?-N.delta:N.goal=='bulk'?N.delta:0))}
+function sugg(){const N=S.nut;if(!(N.need>0)||!N.goal)return null;return Math.round(N.need+(N.goal=='cut'?-N.delta:N.goal=='bulk'?N.delta:0))}
+const dayTotal=s=>((S.nut.log[s]||[]).reduce((a,x)=>a+x.k,0));
+const hdr=t=>'<header><h1>You Need Recovery</h1><p>'+t+'</p></header>';
+function nav(){return '<nav>'+[['train','🏋️ التمارين'],['nut','🥗 التغذية'],['sum','📊 الملخص']].map(x=>`<button class="${S.tab==x[0]?'on':''}" onclick="go(()=>{S.tab='${x[0]}'});scrollTo(0,0)">${x[1]}</button>`).join('')+'</nav>'}
+function render(){const a=document.getElementById('app');a.innerHTML=(S.tab=='nut'?vNut():S.tab=='sum'?vSum():vTrain())+nav()}
+function vTrain(){let h=hdr('متابعة تمرينك');
 h+='<div class="card"><div class="sub" style="margin-bottom:8px">اختر جدولك</div><div class="row tabs">'+Object.keys(PR).map(k=>`<button class="${S.prog==k?'on':''}" onclick="go(()=>{S.prog='${k}'})">${PR[k].n}</button>`).join('')+'</div></div>';
-if(!S.prog){a.innerHTML=h+'<p class="foot">اختر جدولك لتبدأ. يُحفظ تقدمك على جوالك تلقائياً.</p>';return}
+if(!S.prog){return h+'<p class="foot">اختر جدولك لتبدأ. يُحفظ تقدمك على جوالك تلقائياً.</p>'}
 const k=S.prog,p=P(),d=PR[k].d,n=d.length,doneN=Object.keys(p.done).length,cur=Math.min(p.cur,n-1);
 h+=`<div class="card"><div class="bar"><i style="width:${Math.round(doneN/n*100)}%"></i></div><div class="st"><div><b>${doneN}/${n}</b>أيام الدورة</div><div><b>${p.cyc}</b>دورات مكتملة</div><div><b>${p.total}</b>تمرين منجز</div></div>${p.last?`<div class="sub" style="text-align:center;margin-top:8px">آخر تمرين: ${p.last}</div>`:''}</div>`;
 h+='<div class="card"><div class="sub" style="text-align:center">اضغط على اليوم لتقديمه أو تأخيره</div><div class="chips">'+d.map((x,i)=>`<button class="chip ${p.done[i]?'done':''} ${i==cur?'cur':''}" onclick="go(()=>{P().cur=${i}})">${p.done[i]?'✓':i+1}</button>`).join('')+'</div></div>';
 if(doneN>=n){h+=`<div class="card" style="text-align:center"><h2>🎉 أنهيت الدورة كاملة</h2><p class="sub">ممتاز! ابدأ دورة جديدة وتبدأ العلامات من جديد.</p><button class="btn" onclick="go(()=>{const q=P();q.cyc++;q.ck={};q.done={};q.cur=0})">ابدأ دورة جديدة</button></div>`}
 else{const it=items(k,cur),ck=p.ck[cur]||[],all=it.every((_,j)=>ck[j]);
 h+=`<div class="card"><h2>${d[cur][0]}</h2><div class="sub">${PR[k].n} · ${PR[k].note}</div><div style="margin-top:6px">`+it.map((x,j)=>`<div class="ex ${ck[j]?'ck':''}" onclick="go(()=>{const q=P();q.ck[${cur}]=q.ck[${cur}]||[];q.ck[${cur}][${j}]=!q.ck[${cur}][${j}]})"><span class="box">${ck[j]?'✓':''}</span><span class="n">${x=='warm'?'<b>إحماء 5 دقائق</b><small>Warm up</small>':`<b>${AR[x]}</b><small>${x}</small>`}</span></div>`).join('')+'</div>'+
-(all?`<button class="btn" onclick="go(()=>{const q=P();q.done[${cur}]=dt();q.last=dt();q.total++;q.cur=nextOpen('${k}',${cur})})">تم إنهاء اليوم ✅</button>`:'<div class="sub" style="text-align:center;margin-top:8px">علّم كل تمرين عند إنجازه</div>')+
-`<button class="btn o" onclick="go(()=>{P().cur=nextOpen('${k}',${cur})})">أجّل هذا اليوم وانتقل للتالي</button><button class="btn o" onclick="go(()=>{P().rest++})">اليوم إجازة (بدون تغيير الجدول) · ${p.rest}</button></div>`}
-h+='<div class="card"><button class="btn o" onclick="bk()">نسخ احتياطي لتقدمك</button><button class="btn o" onclick="rs()">استعادة نسخة</button><button class="btn o" onclick="if(confirm(\'مسح تقدم هذا الجدول؟\'))go(()=>{delete S.p[S.prog]})">مسح تقدم هذا الجدول</button></div><p class="foot">تقدمك محفوظ على هذا الجوال فقط. أضف الصفحة للشاشة الرئيسية لتفتحها كتطبيق.</p>';
-a.innerHTML=h}
+(all?`<button class="btn" onclick="go(()=>{const q=P();q.done[${cur}]=dt();q.last=dt();q.total++;S.tlog.push(ik());q.cur=nextOpen('${k}',${cur})})">تم إنهاء اليوم ✅</button>`:'<div class="sub" style="text-align:center;margin-top:8px">علّم كل تمرين عند إنجازه</div>')+
+`<button class="btn o" onclick="go(()=>{P().cur=nextOpen('${k}',${cur})})">أجّل هذا اليوم وانتقل للتالي</button><button class="btn o" onclick="go(()=>{P().rest++;S.rlog=(S.rlog||[]);S.rlog.push(ik())})">اليوم إجازة (بدون تغيير الجدول) · ${p.rest}</button></div>`}
+h+='<div class="card"><button class="btn o" onclick="if(confirm(\'مسح تقدم هذا الجدول؟\'))go(()=>{delete S.p[S.prog]})">مسح تقدم هذا الجدول</button></div>'+bkCard();return h}
+function bkCard(){return '<div class="card"><button class="btn o" onclick="bk()">نسخ احتياطي لتقدمك</button><button class="btn o" onclick="rs()">استعادة نسخة</button></div><p class="foot">تقدمك محفوظ على هذا الجوال فقط. أضف الصفحة للشاشة الرئيسية لتفتحها كتطبيق.</p>'}
+function vNut(){const N=S.nut;let h=hdr('متابعة تغذيتك');VD=VD||ik();
+h+=`<div class="card"><h2>احتياجك اليومي وهدفك</h2><label class="l">احتياجك اليومي من السعرات (للحفاظ على وزنك)</label><input type="number" inputmode="numeric" id="need" placeholder="مثال: 2400" value="${N.need||''}" onchange="go(()=>{S.nut.need=+this.value||null;S.nut.custom=null})"><div class="sub" style="margin-top:4px">لا تعرفها؟ استخدم حاسبة السعرات المذكورة في ملفك.</div><label class="l">ما هدفك؟</label><div class="opt">${['cut','bulk','keep'].map(g=>`<button class="${N.goal==g?'on':''}" onclick="go(()=>{S.nut.goal='${g}';S.nut.custom=null})">${g=='cut'?'تنشيف':g=='bulk'?'تضخيم':'ثبات الوزن'}</button>`).join('')}</div>`;
+if(N.goal&&N.goal!='keep'){h+=`<label class="l">${N.goal=='cut'?'النقص':'الزيادة'} المقترح (سعرة يومياً)</label><div class="opt">${[300,400,500,600].map(v=>`<button class="${N.delta==v?'on':''}" onclick="go(()=>{S.nut.delta=${v};S.nut.custom=null})">${v}</button>`).join('')}</div>`}
+const sg=sugg();
+if(sg){h+=`<div class="mint" style="margin-top:12px"><div class="sub">هدفك اليومي المقترح (${GN[N.goal]})</div><div class="big">${ar(sg)} <span style="font-size:16px">سعرة</span></div></div><label class="l">تبغى رقم ثاني؟ اكتب هدفك بنفسك</label><div class="row" style="flex-wrap:nowrap"><input type="number" inputmode="numeric" id="cu" placeholder="اختياري" value="${N.custom||''}" onchange="go(()=>{S.nut.custom=+this.value||null})">${N.custom?'<button class="btn o s" onclick="go(()=>{S.nut.custom=null})">إلغاء</button>':''}</div><div class="sub" style="margin-top:4px">الرقم المقترح تقدير عام، وتقدر تغيّره حسب معرفتك بجسمك.${N.custom?` (هدفك الحالي: ${ar(N.custom)})`:''}</div>`;
+const t=target();if(t<1200)h+='<div class="warn">الهدف أقل من ١٢٠٠ سعرة، وهو منخفض لأغلب الناس. الأفضل استشارة مختص تغذية.</div>'}
+h+='</div>';
+const t=target();
+if(!t){return h+'<p class="foot">أدخل احتياجك واختر هدفك لتبدأ تسجيل أكلك.</p>'+bkCard()}
+const eat=dayTotal(VD),rem=t-eat,over=eat>t;
+h+=`<div class="card"><div class="dn"><button onclick="go(()=>{VD=addDays(VD,-1)})">›</button><h2>${dlab(VD)}</h2><button ${VD>=ik()?'disabled':''} onclick="go(()=>{VD=addDays(VD,1)})">‹</button></div><div class="bar ${over?'over':''}"><i style="width:${Math.min(100,Math.round(eat/t*100))}%"></i></div><div class="g2"><div><b>${ar(eat)}</b>تناولت</div><div><b>${ar(Math.abs(rem))}</b>${over?'زيادة عن هدفك':'متبقي لك'}</div></div>`;
+h+=`<label class="l">أضف وجبة</label><input type="text" id="mn" placeholder="اسم الوجبة (اختياري)"><div class="row" style="flex-wrap:nowrap;margin-top:8px"><input type="number" inputmode="numeric" id="mk" placeholder="السعرات"><button class="btn s" onclick="addM()">إضافة</button></div>`;
+const L=S.nut.log[VD]||[];
+h+=L.length?'<div style="margin-top:10px">'+L.map((x,i)=>`<div class="mi"><span>${x.n||'وجبة'} <span class="sub">· ${ar(x.k)} سعرة</span></span><button onclick="go(()=>{S.nut.log['${VD}'].splice(${i},1)})">حذف</button></div>`).join('')+'</div>':'<div class="sub" style="text-align:center;margin-top:10px">ما سجلت شيء لهذا اليوم</div>';
+h+='</div>'+bkCard();return h}
+function addM(){const k=+document.getElementById('mk').value;if(!(k>0)){alert('اكتب عدد السعرات');return}const n=document.getElementById('mn').value.trim();go(()=>{(S.nut.log[VD]=S.nut.log[VD]||[]).push({n:n,k:Math.round(k)})})}
+function adh(g,e,t){return g=='cut'?e<=t*1.05:g=='bulk'?e>=t*0.95:Math.abs(e-t)<=t*0.07}
+function vSum(){let h=hdr('ملخص تقدمك');const today=ik();const days7=[...Array(7)].map((_,i)=>addDays(today,-i));
+// training
+const tl=S.tlog||[],w7=tl.filter(x=>days7.includes(x)).length,act7=new Set(tl.filter(x=>days7.includes(x))).size,rl=(S.rlog||[]).filter(x=>days7.includes(x)).length;
+const tot=Object.values(S.p).reduce((a,p)=>a+(p.total||0),0),cyc=Object.values(S.p).reduce((a,p)=>a+(p.cyc||0),0);
+let prog='';if(S.prog){const p=P(),n=PR[S.prog].d.length,dn=Object.keys(p.done).length;prog=`<div class="sub" style="margin-top:10px">${PR[S.prog].n}: ${dn} من ${n} أيام الدورة</div><div class="bar"><i style="width:${Math.round(dn/n*100)}%"></i></div>`}
+let sk=0;{let d=today;if(!tl.includes(d))d=addDays(d,-1);while(tl.includes(d)){sk++;d=addDays(d,-1)}}
+h+=`<div class="card"><h2>🏋️ التمارين</h2><div class="g2"><div><b>${ar(act7)}</b>أيام تمرنت فيها هذا الأسبوع</div><div><b>${ar(tot)}</b>تمرين منجز بالكامل</div><div><b>${ar(cyc)}</b>دورات مكتملة</div><div><b>${ar(sk)}</b>أيام متتالية تمرنت فيها</div></div>${rl?`<div class="sub" style="margin-top:8px;text-align:center">أيام إجازة هذا الأسبوع: ${ar(rl)}</div>`:''}${prog||'<div class="sub" style="margin-top:10px;text-align:center">اختر جدولك من تبويب التمارين.</div>'}</div>`;
+// nutrition
+const N=S.nut,t=target();
+if(!t){h+='<div class="card"><h2>🥗 التغذية</h2><p class="sub">حدّد احتياجك وهدفك من تبويب التغذية ليظهر ملخصك هنا.</p></div>'}
+else{const lg=days7.filter(d=>(N.log[d]||[]).length),tots=lg.map(d=>dayTotal(d)),avg=tots.length?tots.reduce((a,b)=>a+b,0)/tots.length:0,okN=lg.filter(d=>adh(N.goal,dayTotal(d),t)).length;
+const net=N.need>0?tots.reduce((a,b)=>a+(b-N.need),0):0,kg=net/7700;
+h+=`<div class="card"><h2>🥗 التغذية</h2><div class="sub">هدفك: ${GN[N.goal]} · ${ar(t)} سعرة يومياً</div><div class="g2"><div><b>${ar(lg.length)}/٧</b>أيام سجلت فيها أكلك</div><div><b>${lg.length?ar(okN)+'/'+ar(lg.length):'-'}</b>أيام التزمت فيها بهدفك</div><div><b>${lg.length?ar(avg):'-'}</b>متوسط سعراتك اليومي</div><div><b>${lg.length?ar(Math.abs(avg-t)):'-'}</b>${avg>t?'فوق هدفك':'تحت هدفك'} في المتوسط</div></div>`;
+if(lg.length&&N.need>0)h+=`<div class="mint" style="margin-top:10px;font-size:14px">تقدير تقريبي لتغير وزنك من الأيام المسجلة: <b><bdi dir="ltr">${kg>=0?'+':'-'}${Math.abs(kg).toLocaleString('en',{maximumFractionDigits:2})}</bdi> كجم</b><div class="sub">تقدير عام وليس قياساً دقيقاً.</div></div>`;
+if(lg.length)h+='<div style="margin-top:10px">'+days7.slice().reverse().map(d=>{const e=dayTotal(d),has=(N.log[d]||[]).length;return `<div class="mi"><span class="sub">${fromIk(d).toLocaleDateString('ar',{weekday:'long'})}</span><span>${has?ar(e)+' سعرة '+(adh(N.goal,e,t)?'✅':'⚠️'):'<span class="sub">لم تسجل</span>'}</span></div>`}).join('')+'</div>';
+else h+='<p class="sub" style="text-align:center">سجّل أكلك لتظهر أرقامك هنا.</p>';
+h+='</div>'}
+// overall
+const sc=[];if(S.prog||tl.length)sc.push(Math.min(100,Math.round(act7/4*100)));
+if(t){const lg=days7.filter(d=>(N.log[d]||[]).length);if(lg.length)sc.push(Math.round(lg.filter(d=>adh(N.goal,dayTotal(d),t)).length/lg.length*100))}
+if(sc.length){const o=Math.round(sc.reduce((a,b)=>a+b,0)/sc.length);h+=`<div class="card" style="text-align:center"><h2>التزامك هذا الأسبوع</h2><div class="big">${ar(o)}٪</div><div class="bar"><i style="width:${o}%"></i></div><div class="sub" style="margin-top:6px">${o>=80?'ممتاز، استمر على نفس الوتيرة 💪':o>=50?'جيد، وتقدر تحسّنه أكثر':'ابدأ بخطوة صغيرة اليوم'}</div><div class="sub">يُحسب من التمرين (٤ أيام أسبوعياً كمرجع) والتزامك بسعراتك.</div></div>`}
+return h+bkCard()}
 function bk(){const c=btoa(unescape(encodeURIComponent(JSON.stringify(S))));(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(()=>alert('تم نسخ الرمز. احفظه في ملاحظاتك.')).catch(()=>prompt('انسخ هذا الرمز واحفظه:',c))}
-function rs(){const c=prompt('الصق رمز النسخة الاحتياطية:');if(!c)return;try{S=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));save();render()}catch(e){alert('الرمز غير صحيح')}}
+function rs(){const c=prompt('الصق رمز النسخة الاحتياطية:');if(!c)return;try{S=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};save();render()}catch(e){alert('الرمز غير صحيح')}}
 render();
 </script></body></html>
