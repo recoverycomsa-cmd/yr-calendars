@@ -45,7 +45,7 @@ full:{n:"الجدول الشامل",note:"3–4 مجموعات × 10–15 تكر
 split:{n:"جدول عضلة كل يوم",note:"3–4 مجموعات × 10–15 تكرار · راحة 2–3 دقائق",d:[["صدر + بطن",["Machine Chest Press","Smith machine incline","Incline chest machine","Decline chest machine","Crunches machine","Plank"]],["ظهر",["Pull down","Low row machine","T-Bar machine","Cable seated row machine","Iso-Lateral row machine","Lower back machine"]],["أكتاف + ترابيس",["Machine shoulder press","Lateral Raise","Machine fly side delts","Cable front raise","Machine Rear Delt Fly","Traps dumbbells"]],["بايسبس + ترايسبس",["Machine Biceps","Hammer Curls","Cable Curls","triceps rope","Cable kickback triceps","Overhead DB Triceps"]],["أرجل",legs]]},
 ppl:{n:"جدول دفع وسحب",note:"3–4 مجموعات × 10–15 تكرار · راحة 30–60 ثانية",d:[push,pull,["أرجل",legs],push,pull]}};
 const K='yr-track-v1';let S;try{S=JSON.parse(localStorage.getItem(K))}catch(e){}S=S||{prog:null,p:{}};
-S.p=S.p||{};S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};S.tab=S.tab||'train';
+S.p=S.p||{};S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};S.nut.w=S.nut.w||{};S.tab=S.tab||'train';
 let VD=null; // viewed day in nutrition tab
 const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
 const P=()=>S.p[S.prog]||(S.p[S.prog]={cur:0,ck:{},done:{},cyc:0,rest:0,last:null,total:0});
@@ -61,6 +61,23 @@ function go(fn){fn();save();render()}
 const GN={cut:'تنشيف (إنقاص وزن)',bulk:'تضخيم (زيادة وزن)',keep:'ثبات الوزن'};
 function target(){const N=S.nut;if(N.custom>0)return Math.round(N.custom);if(!(N.need>0)||!N.goal)return null;return Math.round(N.need+(N.goal=='cut'?-N.delta:N.goal=='bulk'?N.delta:0))}
 function sugg(){const N=S.nut;if(!(N.need>0)||!N.goal)return null;return Math.round(N.need+(N.goal=='cut'?-N.delta:N.goal=='bulk'?N.delta:0))}
+const kf=n=>Number(n).toLocaleString('en',{minimumFractionDigits:1,maximumFractionDigits:1});
+const sg_=n=>(n>0?'+':n<0?'-':'')+kf(Math.abs(n));
+function wStat(){const w=S.nut.w||{},ks=Object.keys(w).sort();if(!ks.length)return null;const f=ks[0],l=ks[ks.length-1],cur=w[l],st=w[f];let prev=null;for(let i=ks.length-2;i>=0;i--){if((fromIk(l)-fromIk(ks[i]))/864e5>=5){prev=ks[i];break}}
+return{ks:ks,cur:cur,st:st,tot:cur-st,wk:prev?(cur-w[prev])/((fromIk(l)-fromIk(prev))/864e5)*7:null,days:Math.round((fromIk(ik())-fromIk(l))/864e5)}}
+function wMsg(s){const g=S.nut.goal;if(!g||s.ks.length<2)return '';const d=s.wk!=null?s.wk:s.tot;
+if(g=='cut')return d<0?'<div class="mint" style="margin-top:10px">وزنك ينزل ✅ استمر على خطتك</div>':'<div class="warn">وزنك ما نزل بعد. راجع سعراتك والتزامك، وأعطها أسبوعاً أو أسبوعين.</div>';
+if(g=='bulk')return d>0?'<div class="mint" style="margin-top:10px">وزنك يزيد ✅ استمر على خطتك</div>':'<div class="warn">وزنك ما زاد بعد. جرب ترفع سعراتك شوي وراجع التزامك.</div>';
+return Math.abs(d)<=1?'<div class="mint" style="margin-top:10px">وزنك ثابت ✅</div>':'<div class="warn">وزنك تغيّر أكثر من كيلو. راجع سعراتك إذا تبغى تثبته.</div>'}
+function wChart(s){const ks=s.ks.slice(-12);if(ks.length<2)return '';const v=ks.map(k=>S.nut.w[k]),mn=Math.min(...v),mx=Math.max(...v),r=(mx-mn)||1;
+const pts=v.map((x,i)=>(10+i*(280/(v.length-1))).toFixed(1)+','+(70-(x-mn)/r*55).toFixed(1));
+return '<svg viewBox="0 0 300 80" style="width:100%;margin-top:10px"><defs><linearGradient id="gw"><stop offset="0" stop-color="#0097A7"/><stop offset="1" stop-color="#76D852"/></linearGradient></defs><polyline fill="none" stroke="url(#gw)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" points="'+pts.join(' ')+'"/>'+pts.map(p=>'<circle cx="'+p.split(',')[0]+'" cy="'+p.split(',')[1]+'" r="4" fill="#0A6E64"/>').join('')+'</svg>'}
+function wCard(){const s=wStat();let h='<div class="card"><h2>⚖️ وزنك الأسبوعي</h2><div class="sub">وزّن نفسك مرة بالأسبوع، بنفس اليوم والوقت (الأفضل الصباح قبل الأكل).</div><div class="row" style="flex-wrap:nowrap;margin-top:8px"><input type="number" inputmode="decimal" step="0.1" id="wk" placeholder="وزنك بالكيلو"><button class="btn s" onclick="addW()">سجّل</button></div>';
+if(s){if(s.days>=7)h+='<div class="warn">مرّ '+ar(s.days)+' أيام على آخر وزن. وقت تسجّل وزنك الجديد 🔔</div>';
+h+='<div class="g2"><div><b><bdi dir="ltr">'+kf(s.st)+'</bdi></b>وزن البداية</div><div><b><bdi dir="ltr">'+kf(s.cur)+'</bdi></b>وزنك الحالي</div><div><b><bdi dir="ltr">'+sg_(s.tot)+'</bdi></b>التغيّر الكلي (كجم)</div><div><b>'+(s.wk!=null?'<bdi dir="ltr">'+sg_(s.wk)+'</bdi>':'-')+'</b>المعدل الأسبوعي (كجم)</div></div>'+wMsg(s)+wChart(s)+'<div style="margin-top:10px">'+s.ks.slice(-6).reverse().map(k=>'<div class="mi"><span class="sub">'+dlab(k)+'</span><span><b><bdi dir="ltr">'+kf(S.nut.w[k])+'</bdi></b> كجم</span><button onclick="go(()=>{delete S.nut.w[\''+k+'\']})">حذف</button></div>').join('')+'</div>'}
+else h+='<p class="sub" style="text-align:center;margin-top:10px">سجّل وزنك الحالي لتبدأ متابعة التغيّر.</p>';
+return h+'</div>'}
+function addW(){const v=parseFloat(document.getElementById('wk').value);if(!(v>20&&v<400)){alert('اكتب وزنك بالكيلو، مثال: 78.5');return}go(()=>{S.nut.w[ik()]=Math.round(v*10)/10})}
 const dayTotal=s=>((S.nut.log[s]||[]).reduce((a,x)=>a+x.k,0));
 const hdr=t=>'<header><h1>You Need Recovery</h1><p>'+t+'</p></header>';
 function nav(){return '<nav>'+[['train','🏋️ التمارين'],['nut','🥗 التغذية'],['sum','📊 الملخص']].map(x=>`<button class="${S.tab==x[0]?'on':''}" onclick="go(()=>{S.tab='${x[0]}'});scrollTo(0,0)">${x[1]}</button>`).join('')+'</nav>'}
@@ -86,13 +103,13 @@ if(sg){h+=`<div class="mint" style="margin-top:12px"><div class="sub">هدفك �
 const t=target();if(t<1200)h+='<div class="warn">الهدف أقل من ١٢٠٠ سعرة، وهو منخفض لأغلب الناس. الأفضل استشارة مختص تغذية.</div>'}
 h+='</div>';
 const t=target();
-if(!t){return h+'<p class="foot">أدخل احتياجك واختر هدفك لتبدأ تسجيل أكلك.</p>'+bkCard()}
+if(!t){return h+wCard()+'<p class="foot">أدخل احتياجك واختر هدفك لتبدأ تسجيل أكلك.</p>'+bkCard()}
 const eat=dayTotal(VD),rem=t-eat,over=eat>t;
 h+=`<div class="card"><div class="dn"><button onclick="go(()=>{VD=addDays(VD,-1)})">›</button><h2>${dlab(VD)}</h2><button ${VD>=ik()?'disabled':''} onclick="go(()=>{VD=addDays(VD,1)})">‹</button></div><div class="bar ${over?'over':''}"><i style="width:${Math.min(100,Math.round(eat/t*100))}%"></i></div><div class="g2"><div><b>${ar(eat)}</b>تناولت</div><div><b>${ar(Math.abs(rem))}</b>${over?'زيادة عن هدفك':'متبقي لك'}</div></div>`;
 h+=`<label class="l">أضف وجبة</label><input type="text" id="mn" placeholder="اسم الوجبة (اختياري)"><div class="row" style="flex-wrap:nowrap;margin-top:8px"><input type="number" inputmode="numeric" id="mk" placeholder="السعرات"><button class="btn s" onclick="addM()">إضافة</button></div>`;
 const L=S.nut.log[VD]||[];
 h+=L.length?'<div style="margin-top:10px">'+L.map((x,i)=>`<div class="mi"><span>${x.n||'وجبة'} <span class="sub">· ${ar(x.k)} سعرة</span></span><button onclick="go(()=>{S.nut.log['${VD}'].splice(${i},1)})">حذف</button></div>`).join('')+'</div>':'<div class="sub" style="text-align:center;margin-top:10px">ما سجلت شيء لهذا اليوم</div>';
-h+='</div>'+bkCard();return h}
+h+='</div>'+wCard()+bkCard();return h}
 function addM(){const k=+document.getElementById('mk').value;if(!(k>0)){alert('اكتب عدد السعرات');return}const n=document.getElementById('mn').value.trim();go(()=>{(S.nut.log[VD]=S.nut.log[VD]||[]).push({n:n,k:Math.round(k)})})}
 function adh(g,e,t){return g=='cut'?e<=t*1.05:g=='bulk'?e>=t*0.95:Math.abs(e-t)<=t*0.07}
 function vSum(){let h=hdr('ملخص تقدمك');const today=ik();const days7=[...Array(7)].map((_,i)=>addDays(today,-i));
@@ -112,12 +129,13 @@ if(lg.length&&N.need>0)h+=`<div class="mint" style="margin-top:10px;font-size:14
 if(lg.length)h+='<div style="margin-top:10px">'+days7.slice().reverse().map(d=>{const e=dayTotal(d),has=(N.log[d]||[]).length;return `<div class="mi"><span class="sub">${fromIk(d).toLocaleDateString('ar',{weekday:'long'})}</span><span>${has?ar(e)+' سعرة '+(adh(N.goal,e,t)?'✅':'⚠️'):'<span class="sub">لم تسجل</span>'}</span></div>`}).join('')+'</div>';
 else h+='<p class="sub" style="text-align:center">سجّل أكلك لتظهر أرقامك هنا.</p>';
 h+='</div>'}
+const ws=wStat();if(ws)h+='<div class="card"><h2>⚖️ الوزن</h2><div class="g2"><div><b><bdi dir="ltr">'+kf(ws.cur)+'</bdi></b>وزنك الحالي (كجم)</div><div><b><bdi dir="ltr">'+sg_(ws.tot)+'</bdi></b>التغيّر منذ البداية</div></div>'+(ws.wk!=null?'<div class="sub" style="text-align:center;margin-top:8px">المعدل الأسبوعي: <bdi dir="ltr">'+sg_(ws.wk)+'</bdi> كجم</div>':'')+wMsg(ws)+wChart(ws)+'</div>';
 // overall
 const sc=[];if(S.prog||tl.length)sc.push(Math.min(100,Math.round(act7/4*100)));
 if(t){const lg=days7.filter(d=>(N.log[d]||[]).length);if(lg.length)sc.push(Math.round(lg.filter(d=>adh(N.goal,dayTotal(d),t)).length/lg.length*100))}
 if(sc.length){const o=Math.round(sc.reduce((a,b)=>a+b,0)/sc.length);h+=`<div class="card" style="text-align:center"><h2>التزامك هذا الأسبوع</h2><div class="big">${ar(o)}٪</div><div class="bar"><i style="width:${o}%"></i></div><div class="sub" style="margin-top:6px">${o>=80?'ممتاز، استمر على نفس الوتيرة 💪':o>=50?'جيد، وتقدر تحسّنه أكثر':'ابدأ بخطوة صغيرة اليوم'}</div><div class="sub">يُحسب من التمرين (٤ أيام أسبوعياً كمرجع) والتزامك بسعراتك.</div></div>`}
 return h+bkCard()}
 function bk(){const c=btoa(unescape(encodeURIComponent(JSON.stringify(S))));(navigator.clipboard?navigator.clipboard.writeText(c):Promise.reject()).then(()=>alert('تم نسخ الرمز. احفظه في ملاحظاتك.')).catch(()=>prompt('انسخ هذا الرمز واحفظه:',c))}
-function rs(){const c=prompt('الصق رمز النسخة الاحتياطية:');if(!c)return;try{S=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};save();render()}catch(e){alert('الرمز غير صحيح')}}
+function rs(){const c=prompt('الصق رمز النسخة الاحتياطية:');if(!c)return;try{S=JSON.parse(decodeURIComponent(escape(atob(c.trim()))));S.tlog=S.tlog||[];S.nut=S.nut||{need:null,goal:null,delta:500,custom:null,log:{}};S.nut.log=S.nut.log||{};S.nut.w=S.nut.w||{};save();render()}catch(e){alert('الرمز غير صحيح')}}
 render();
 </script></body></html>
