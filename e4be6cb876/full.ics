@@ -1,0 +1,117 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//You Need Recovery//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:You Need Recovery - الجدول الشامل
+X-WR-TIMEZONE:Asia/Riyadh
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:yr-full-0@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261101T150000Z
+DTEND:20261101T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ اليوم 1 | Day 1
+DESCRIPTION:الجدول الشامل — اليوم 1\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. جهاز صدر مستوي — Machine Chest Press\n☐ 2. س
+ حب همر أفقي — hammer row\n☐ 3. دفع أكتاف جهاز —
+  Machine shoulder press\n☐ 4. رفرفة أرجل أمامي — Leg Ext
+ ension Machine\n☐ 5. جهاز بايسبس — Machine Biceps\n☐ 6. ت
+ رايسبس حبل كيبل — triceps rope\n\nلا تنسَ الإحم
+ اء 5 دقائق قبل البدء، والماء أثناء التمري
+ ن.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: اليوم 1
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-full-1@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261102T150000Z
+DTEND:20261102T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ اليوم 2 | Day 2
+DESCRIPTION:الجدول الشامل — اليوم 2\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. صدر عالي جهاز — Incline Chest Press\n☐ 2. سح
+ ب علوي واسع — Lat pulldown\n☐ 3. كتف جانبي دمبل 
+ — DB Seated Side Raises\n☐ 4. طعن حر — Lunges\n☐ 5. بطن م
+ توازي حر — Vertical leg raise\n☐ 6. بلانك بطن — Plank
+ \n\nلا تنسَ الإحماء 5 دقائق قبل البدء، والم
+ اء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: اليوم 2
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-full-2@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261103T150000Z
+DTEND:20261103T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ اليوم 3 | Day 3
+DESCRIPTION:الجدول الشامل — اليوم 3\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. صدر سفلي جهاز — Decline Chest Press\n☐ 2. سح
+ ب منشار جهاز — Machine Row\n☐ 3. كتف أمامي جهاز 
+ — Machine Overhead Press\n☐ 4. دفش جهاز — Leg press\n☐ 5. 
+ مطرقة بايسبس دمبل — Hammer Curls\n☐ 6. ترايسبس 
+ كيبل — Cable kickback triceps\n\nلا تنسَ الإحماء 5 دق
+ ائق قبل البدء، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: اليوم 3
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-full-3@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261104T150000Z
+DTEND:20261104T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ اليوم 4 | Day 4
+DESCRIPTION:الجدول الشامل — اليوم 4\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. صدر تفتيح جهاز — Machine Chest Fly\n☐ 2. سح
+ ب كيبل ضيق — Cable Seated Rows\n☐ 3. كتف خلفي جهاز 
+ — Machine Rear Delt Fly\n☐ 4. فخذ خلفي جهاز — Hamstring c
+ urls\n☐ 5. بطن جهاز — Machine crunches\n☐ 6. ترابيس د
+ مبل — Traps Dumbbells\n\nلا تنسَ الإحماء 5 دقائق ق
+ بل البدء، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: اليوم 4
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-full-4@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261105T150000Z
+DTEND:20261105T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ اليوم 5 | Day 5
+DESCRIPTION:الجدول الشامل — اليوم 5\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. صدر عالي جهاز سميث — Smith machine incline\n
+ ☐ 2. أسفل ظهر جهاز — Lower Back Machine\n☐ 3. كتف دم
+ بل — Dumbbell Shoulder press\n☐ 4. بطات واقف جهاز — St
+ anding Calf Raise\n☐ 5. بايسبس كيبل — Cable Curls\n☐ 6. ت
+ رايسبس دمبل خلفي — Overhead DB Triceps\n\nلا تنسَ ا
+ لإحماء 5 دقائق قبل البدء، والماء أثناء ال
+ تمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: اليوم 5
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

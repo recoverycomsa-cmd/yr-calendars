@@ -1,0 +1,119 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//You Need Recovery//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:You Need Recovery - جدول عضلة كل يوم
+X-WR-TIMEZONE:Asia/Riyadh
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:yr-split-0@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261101T150000Z
+DTEND:20261101T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ صدر + بطن | Chest - Abs
+DESCRIPTION:جدول عضلة كل يوم — صدر + بطن\n3–4 مجم
+ وعات × 10–15 تكرار، راحة 2–3 دقائق بين التم
+ ارين\n\n☐ 1. جهاز صدر مستوي — Machine Chest Press\n☐
+  2. صدر عالي جهاز سميث — Smith machine incline\n☐ 3. ج
+ هاز صدر عالي — Incline chest machine\n☐ 4. جهاز صدر 
+ سفلي — Decline chest machine\n☐ 5. جهاز بطن علوي — Cr
+ unches machine\n☐ 6. بلانك بطن — Plank\n\nلا تنسَ الإ
+ حماء 5 دقائق قبل البدء، والماء أثناء التم
+ رين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: صدر + بطن
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-split-1@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261102T150000Z
+DTEND:20261102T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ ظهر | Back
+DESCRIPTION:جدول عضلة كل يوم — ظهر\n3–4 مجموعات 
+ × 10–15 تكرار، راحة 2–3 دقائق بين التمارين\
+ n\n☐ 1. سحب علوي — Pull down\n☐ 2. جهاز منشار — Lo
+ w row machine\n☐ 3. جهاز ظهر علوي — T-Bar machine\n☐ 4. 
+ جهاز سحب أرضي — Cable seated row machine\n☐ 5. جهاز س
+ حب همر — Iso-Lateral row machine\n☐ 6. جهاز أسفل الظه
+ ر — Lower back machine\n\nلا تنسَ الإحماء 5 دقائق ق
+ بل البدء، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: ظهر
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-split-2@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261103T150000Z
+DTEND:20261103T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ أكتاف + ترابيس | Shoulders - Traps
+DESCRIPTION:جدول عضلة كل يوم — أكتاف + ترابيس\n3
+ –4 مجموعات × 10–15 تكرار، راحة 2–3 دقائق بي
+ ن التمارين\n\n☐ 1. دفع أكتاف جهاز — Machine shoul
+ der press\n☐ 2. رفرفة كتف جانبي — Lateral Raise\n☐ 3. 
+ جهاز رفرفة جانبي — Machine fly side delts\n☐ 4. كتف 
+ أمامي كيبل — Cable front raise\n☐ 5. كتف خلفي جهاز
+  — Machine Rear Delt Fly\n☐ 6. ترابيس دمبل — Traps dumbbel
+ ls\n\nلا تنسَ الإحماء 5 دقائق قبل البدء، وال
+ ماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: أكتاف + ترابيس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-split-4@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261105T150000Z
+DTEND:20261105T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ بايسبس + ترايسبس | Biceps - Triceps
+DESCRIPTION:جدول عضلة كل يوم — بايسبس + ترايسبس
+ \n3–4 مجموعات × 10–15 تكرار، راحة 2–3 دقائق 
+ بين التمارين\n\n☐ 1. جهاز بايسبس — Machine Biceps
+ \n☐ 2. مطرقة بايسبس دمبل — Hammer Curls\n☐ 3. باي
+ سبس كيبل — Cable Curls\n☐ 4. ترايسبس حبل كيبل —
+  triceps rope\n☐ 5. ترايسبس كيبل — Cable kickback triceps\n
+ ☐ 6. ترايسبس دمبل خلفي — Overhead DB Triceps\n\nلا ت
+ نسَ الإحماء 5 دقائق قبل البدء، والماء أثن
+ اء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: بايسبس + ترايسبس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-split-5@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261106T150000Z
+DTEND:20261106T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ أرجل | Legs
+DESCRIPTION:جدول عضلة كل يوم — أرجل\n3–4 مجموعا
+ ت × 10–15 تكرار، راحة 2–3 دقائق بين التماري
+ ن\n\n☐ 1. رفرفة أرجل أمامي — Leg Extension Machine\n☐
+  2. طعن حر — Lunges\n☐ 3. دفش جهاز — Leg press\n☐ 4. 
+ فخذ خلفي جهاز — Hamstring curls\n☐ 5. جهاز العضلة
+  الضامة — Adductor machine\n☐ 6. جهاز غلوتس — Abducto
+ r machine\n☐ 7. بطات واقف جهاز — Standing Calf Raise\n\nل
+ ا تنسَ الإحماء 5 دقائق قبل البدء، والماء 
+ أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: أرجل
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

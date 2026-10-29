@@ -1,0 +1,128 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//You Need Recovery//AR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:You Need Recovery - جدول دفع وسحب
+X-WR-TIMEZONE:Asia/Riyadh
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:yr-ppl-0@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261101T150000Z
+DTEND:20261101T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ دفع: صدر + أكتاف + ترايسبس | Push
+DESCRIPTION:جدول دفع وسحب — دفع: صدر + أكتاف + تر
+ ايسبس\n3–4 مجموعات × 10–15 تكرار، راحة 30–60 
+ ثانية بين التمارين\n\n☐ 1. صدر عالي جهاز — 
+ Incline Chest Press\n☐ 2. جهاز صدر مستوي — Machine Chest P
+ ress\n☐ 3. صدر سفلي جهاز — Decline Chest Press\n☐ 4. دف
+ ع أكتاف جهاز — Machine shoulder press\n☐ 5. كتف جانب
+ ي دمبل — DB Seated Side Raises\n☐ 6. ترايسبس حبل كيب
+ ل — triceps rope\n☐ 7. ترايسبس دمبل خلفي — Overhead 
+ DB Triceps\n\nلا تنسَ الإحماء 5 دقائق قبل البدء
+ ، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: دفع: صدر + أكتاف + ترايس
+ بس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-ppl-1@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261102T150000Z
+DTEND:20261102T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ سحب: ظهر + أكتاف خلفية + بايسبس | Pul
+ l
+DESCRIPTION:جدول دفع وسحب — سحب: ظهر + أكتاف خلف
+ ية + بايسبس\n3–4 مجموعات × 10–15 تكرار، راحة
+  30–60 ثانية بين التمارين\n\n☐ 1. سحب علوي وا
+ سع — Lat pulldown\n☐ 2. سحب منشار جهاز — Machine Row\n
+ ☐ 3. سحب همر أفقي — hammer row\n☐ 4. جهاز بايسبس
+  — Machine Biceps\n☐ 5. مطرقة بايسبس دمبل — Hammer Cu
+ rls\n☐ 6. بايسبس كيبل — Cable Curls\n☐ 7. كتف خلفي 
+ جهاز — Machine Rear Delt Fly\n\nلا تنسَ الإحماء 5 دق
+ ائق قبل البدء، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: سحب: ظهر + أكتاف خلفية +
+  بايسبس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-ppl-2@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261103T150000Z
+DTEND:20261103T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ أرجل | Legs
+DESCRIPTION:جدول دفع وسحب — أرجل\n3–4 مجموعات × 
+ 10–15 تكرار، راحة 30–60 ثانية بين التمارين\n
+ \n☐ 1. رفرفة أرجل أمامي — Leg Extension Machine\n☐ 2. 
+ طعن حر — Lunges\n☐ 3. دفش جهاز — Leg press\n☐ 4. فخ
+ ذ خلفي جهاز — Hamstring curls\n☐ 5. جهاز العضلة ا
+ لضامة — Adductor machine\n☐ 6. جهاز غلوتس — Abductor m
+ achine\n☐ 7. بطات واقف جهاز — Standing Calf Raise\n\nلا 
+ تنسَ الإحماء 5 دقائق قبل البدء، والماء أث
+ ناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: أرجل
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-ppl-4@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261105T150000Z
+DTEND:20261105T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ دفع: صدر + أكتاف + ترايسبس | Push
+DESCRIPTION:جدول دفع وسحب — دفع: صدر + أكتاف + تر
+ ايسبس\n3–4 مجموعات × 10–15 تكرار، راحة 30–60 
+ ثانية بين التمارين\n\n☐ 1. صدر عالي جهاز — 
+ Incline Chest Press\n☐ 2. جهاز صدر مستوي — Machine Chest P
+ ress\n☐ 3. صدر سفلي جهاز — Decline Chest Press\n☐ 4. دف
+ ع أكتاف جهاز — Machine shoulder press\n☐ 5. كتف جانب
+ ي دمبل — DB Seated Side Raises\n☐ 6. ترايسبس حبل كيب
+ ل — triceps rope\n☐ 7. ترايسبس دمبل خلفي — Overhead 
+ DB Triceps\n\nلا تنسَ الإحماء 5 دقائق قبل البدء
+ ، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: دفع: صدر + أكتاف + ترايس
+ بس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:yr-ppl-5@recovery.shopping
+DTSTAMP:20261029T150000Z
+DTSTART:20261106T150000Z
+DTEND:20261106T160000Z
+RRULE:FREQ=WEEKLY;UNTIL=20271031T000000Z
+SUMMARY:🏋️ سحب: ظهر + أكتاف خلفية + بايسبس | Pul
+ l
+DESCRIPTION:جدول دفع وسحب — سحب: ظهر + أكتاف خلف
+ ية + بايسبس\n3–4 مجموعات × 10–15 تكرار، راحة
+  30–60 ثانية بين التمارين\n\n☐ 1. سحب علوي وا
+ سع — Lat pulldown\n☐ 2. سحب منشار جهاز — Machine Row\n
+ ☐ 3. سحب همر أفقي — hammer row\n☐ 4. جهاز بايسبس
+  — Machine Biceps\n☐ 5. مطرقة بايسبس دمبل — Hammer Cu
+ rls\n☐ 6. بايسبس كيبل — Cable Curls\n☐ 7. كتف خلفي 
+ جهاز — Machine Rear Delt Fly\n\nلا تنسَ الإحماء 5 دق
+ ائق قبل البدء، والماء أثناء التمرين.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:تمرين اليوم: سحب: ظهر + أكتاف خلفية +
+  بايسبس
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
